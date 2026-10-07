@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+main{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:100vh 100vh 100vh;
+     grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+header{
+   grid-area: header;
+ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   
+ 
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+     background-color: rgb(70, 151, 181);
+
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+
+    z-index: 0;
+}
+
+header .pic{
+    background-image: url("./imge/pexels-shvetsa-3727474.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    width: 30%;
+    height:70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.pic h1{
+   font-size: clamp(2rem, 5vw, 3.3rem);
+  color: rgb(255, 255, 255);
+}
+
+header .conteant{
+    position: relative;
+    z-index: 1;
+      width: 50%;
+    
+}
+.conteant{
+    position: fixed;
+    padding: 20px;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: first baseline;
+      gap: 20px;
+}
+.conteant p{
+    font-size: 1.3rem;
+}
+
+
+.conteant .icon{
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      width: 100%;
+      gap: 20px;
+      padding: 10px;
+}
+
+
+
+
+section{
+    grid-area: main;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+section h1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 70%;
+}
+section .box {
+  width: 80%; 
+    flex: 0;
+     
+   
+
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 50px;
+    padding: 2px;
+  
+}
+
+section .box .box1{
+    width: 300px; 
+    height: 280px; 
+      
+    display: flex; 
+    flex-direction: column; 
+
+    gap: 10px; 
+    align-items: center; 
+    justify-content: space-between; 
+
+    background-color: #b0afb2; 
+}
+
+section .box .box1 .con{
+    height: 150px;
+    font-size: 1rem;
+    background-color: rgb(0, 0, 233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 90px;
+    color: aliceblue;
+}
+
+section .box .box1 .icon{
+      height:50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+   padding: 10px;
+    font-size: 1.2rem;
+}
+
+section .box .box1 .text{
+     height:50px;
+    font-size: 1rem;
+    color: aqua;
+}
+
+
+
+
+
+footer {
+    grid-area: footer;
+    background-color: rgb(70, 151, 181);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 60px 6%;
+    gap: 50px;
+}
+
+footer .textk {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    color: white;
+}
+
+footer .textk h1 {
+    font-size: 3rem;
+}
+
+footer .textk p {
+    font-size: 1.3rem;
+}
+
+footer .textk h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+footer .textk h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+footer .textk a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+footer .picf {
+    width: 55%;
+    height: 520px;
+
+    background-image: url("./imge/pexels-shvetsa-3727464.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+
+    main {
+        grid-template-rows: 100vh auto auto;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    header .pic {
+        width: 50%;
+        height: 50%;
+    }
+
+    header .conteant {
+        width: 80%;
+    }
+
+    .conteant {
+        position: static;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    section .box {
+        width: 95%;
+        gap: 30px;
+    }
+
+    section .box .box1 {
+        width: 280px;
+    }
+
+    footer {
+        padding: 50px 5%;
+    }
+
+    footer .textk {
+        width: 45%;
+    }
+
+    footer .picf {
+        width: 50%;
+        height: 400px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    main {
+        grid-template-rows: auto auto auto;
+    }
+
+
+    /* HEADER */
+
+    header {
+        min-height: 100vh;
+        padding: 20px;
+
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    header .pic {
+        width: 90%;
+        height: 300px;
+    }
+
+    header .conteant {
+        width: 100%;
+    }
+
+    .conteant {
+        position: static;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .conteant p {
+        font-size: 1rem;
+    }
+
+
+    /* MY WORK */
+
+    section {
+        padding: 30px 10px;
+    }
+
+    section h1 {
+        width: 90%;
+    }
+
+    section .box {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    section .box .box1 {
+        width: 300px;
+        max-width: 90%;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+
+        padding: 40px 20px;
+
+        gap: 30px;
+    }
+
+    footer .textk {
+        width: 100%;
+    }
+
+    footer .textk h1 {
+        font-size: 2.3rem;
+    }
+
+    footer .textk p {
+        font-size: 1.1rem;
+    }
+
+    footer .picf {
+        width: 100%;
+        height: 350px;
+    }
+}
